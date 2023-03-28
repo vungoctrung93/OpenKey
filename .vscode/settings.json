@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.ejs": "html",
+    "*.jsp": "jsp",
+    "*.csproj": "aspnetcorerazor",
+    "map": "cpp"
+  }
+}

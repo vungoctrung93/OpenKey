@@ -206,11 +206,23 @@ void getAllMacro(vector<vector<Uint32>>& keys, vector<string>& macroTexts, vecto
     keys.clear();
     macroTexts.clear();
     macroContents.clear();
+    
+    
+    map<string,string> macroStringMap;
+    
     for (std::map<vector<Uint32>, MacroData>::iterator it = macroMap.begin(); it != macroMap.end(); ++it) {
-        keys.push_back(it->first);
-        macroTexts.push_back(it->second.macroText);
-        macroContents.push_back(it->second.macroContent);
+        macroStringMap.insert(pair<string, string>(it->second.macroText, it->second.macroContent));
     }
+    
+    
+   for (std::map<string,string>::iterator it = macroStringMap.begin(); it != macroStringMap.end(); ++it) {
+           vector<Uint32> key;
+           convert(it->first, key);
+           keys.push_back(key);
+           macroTexts.push_back(it->first);
+           macroContents.push_back(it->second);
+   }
+
 }
 
 bool addMacro(const string& macroText, const string& macroContent) {
