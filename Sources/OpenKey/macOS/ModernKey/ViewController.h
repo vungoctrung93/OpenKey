@@ -11,10 +11,6 @@
 
 @interface ViewController : NSViewController<MyTextFieldDelegate>
 @property (strong) IBOutlet NSView *viewParent;
-@property (weak) IBOutlet NSButton *tabbuttonPrimary;
-@property (weak) IBOutlet NSButton *tabbuttonMacro;
-@property (weak) IBOutlet NSButton *tabbuttonSystem;
-@property (weak) IBOutlet NSButton *tabbuttonInfo;
 @property (weak) IBOutlet NSBox *tabviewPrimary;
 @property (weak) IBOutlet NSBox *tabviewMacro;
 @property (weak) IBOutlet NSBox *tabviewSystem;
